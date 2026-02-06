@@ -1,11 +1,12 @@
 import { readdir, writeFile, mkdir } from 'fs/promises'
 import { join } from 'path'
 
-async function generateModulesList(): Promise<void> {
+async function generateModulesList() {
   try {
-    const modulesDir = join(process.cwd(), 'modules')
+    const publicDir = join(process.cwd(), 'public')
+
+    const modulesDir = join(publicDir, 'modules')
     const entries = await readdir(modulesDir, { withFileTypes: true })
-    
     const modules = entries
       .filter(entry => entry.isDirectory())
       .map(entry => entry.name)
@@ -13,15 +14,10 @@ async function generateModulesList(): Promise<void> {
     
     const jsonContent = JSON.stringify(modules, null, 2)
     
-    // Write to public directory (Vite will copy to docs during build)
-    const publicDir = join(process.cwd(), 'public')
-    await mkdir(publicDir, { recursive: true })
+    const manifestPath = join(modulesDir, 'manifest.json')
+    await writeFile(manifestPath, jsonContent)
     
-    const publicPath = join(publicDir, 'modules.json')
-    await writeFile(publicPath, jsonContent)
-    
-    console.log(`Generated modules.json with ${modules.length} modules`)
-    console.log('Modules:', modules)
+    console.log(`Generated manifest.json with ${modules.length} modules`, modules)
   } catch (error) {
     console.error('Error generating modules list:', error)
     process.exit(1)

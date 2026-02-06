@@ -18,7 +18,7 @@ npm run build
 This will:
 1. Compile TypeScript and Vue components
 2. Build the static site to the `docs/` directory
-3. Generate `modules.json` listing all available modules
+3. Generate `public/manifest.json` listing all available modules
 
 ## Deployment
 
