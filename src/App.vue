@@ -12,11 +12,9 @@ const loading = ref(true)
 
 onMounted(async () => {
   try {
-    // In production, we'll fetch the list of modules from a generated JSON file
-    // For now, we'll discover modules by listing the modules directory
     const response = await fetch('/foundryvtt-modules/modules.json')
-    const data = await response.json()
-    modules.value = data.modules.map((id: string) => ({
+    const moduleIds = await response.json()
+    modules.value = moduleIds.map((id: string) => ({
       id,
       readmePath: `/foundryvtt-modules/modules/${id}/README.md`
     }))

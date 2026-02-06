@@ -1,11 +1,6 @@
 import { readdir, writeFile, mkdir } from 'fs/promises'
 import { join } from 'path'
 
-interface ModulesData {
-  modules: string[]
-  generatedAt: string
-}
-
 async function generateModulesList(): Promise<void> {
   try {
     const modulesDir = join(process.cwd(), 'modules')
@@ -16,24 +11,12 @@ async function generateModulesList(): Promise<void> {
       .map(entry => entry.name)
       .sort()
     
-    const data: ModulesData = {
-      modules,
-      generatedAt: new Date().toISOString()
-    }
+    const jsonContent = JSON.stringify(modules, null, 2)
     
-    const jsonContent = JSON.stringify(data, null, 2)
-    
-    // Ensure the output directories exist
-    const docsDir = join(process.cwd(), 'docs')
+    // Write to public directory (Vite will copy to docs during build)
     const publicDir = join(process.cwd(), 'public')
-    await mkdir(docsDir, { recursive: true })
     await mkdir(publicDir, { recursive: true })
     
-    // Write to docs directory for production build
-    const docsPath = join(docsDir, 'modules.json')
-    await writeFile(docsPath, jsonContent)
-    
-    // Write to public directory for development server
     const publicPath = join(publicDir, 'modules.json')
     await writeFile(publicPath, jsonContent)
     
