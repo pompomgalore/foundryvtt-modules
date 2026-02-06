@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build && node scripts/generate-modules-list.mjs",
+    "generate:modules": "tsx scripts/generate-modules-list.ts",
+    "dev": "npm run generate:modules && vite",
+    "build": "vue-tsc && vite build && npm run generate:modules",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.15",
-    "marked": "^11.1.1"
+    "marked": "^11.1.1",
+    "vue": "^3.4.15"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
+    "tsx": "^4.21.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
     "vue-tsc": "^2.0.0"

@@ -34,11 +34,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Copy modules and releases to docs
-        run: |
-          cp -r modules docs/modules
-          cp -r releases docs/releases
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -8,5 +8,13 @@ export default defineConfig({
   build: {
     outDir: 'docs',
     emptyOutDir: true,
+    copyPublicDir: true
   },
+  server: {
+    fs: {
+      // Allow serving files from the modules and releases directories
+      allow: ['..']
+    }
+  },
+  publicDir: 'public'
 })
