@@ -1,4 +1,4 @@
-import { readdir, writeFile, mkdir, copyFile } from 'fs/promises'
+import { readdir, writeFile, mkdir } from 'fs/promises'
 import { join } from 'path'
 
 interface ModulesData {
