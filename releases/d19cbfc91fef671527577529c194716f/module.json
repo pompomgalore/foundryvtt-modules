@@ -31,7 +31,7 @@
   },
   "esmodules": ["esmodule.js"],
   "url": "https://pompomgalore.github.io/foundryvtt-modules",
-  "manifest": "https://pompomgalore.github.io/foundryvtt-modules/releases/000c85bc4bb00a778f74e3887694e89d/module.json",
-  "download": "https://pompomgalore.github.io/foundryvtt-modules/releases/000c85bc4bb00a778f74e3887694e89d/module.zip",
-  "readme": "README.md"
+  "manifest": "https://pompomgalore.github.io/foundryvtt-modules/releases/d19cbfc91fef671527577529c194716f/module.json",
+  "download": "https://pompomgalore.github.io/foundryvtt-modules/releases/d19cbfc91fef671527577529c194716f/1.0.10.zip",
+  "readme": "https://pompomgalore.github.io/foundryvtt-modules/modules/dngnr-gos/README.md"
 }
