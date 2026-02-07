@@ -37,8 +37,8 @@ onMounted(async () => {
           previewImage.value = `${baseUrl}media/${format}`
           break
         }
-      } catch {
-        // Continue to next format
+      } catch (error) {
+        console.debug(`Preview format ${format} not found for ${props.moduleId}`)
       }
     }
     

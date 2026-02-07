@@ -43,11 +43,12 @@ onMounted(async () => {
     const renderer = new marked.Renderer()
     const originalImageRenderer = renderer.image.bind(renderer)
     
-    renderer.image = (href, title, text) => {
-      if (href && !href.startsWith('http') && !href.startsWith('/')) {
-        href = baseUrl + href
+    renderer.image = (href: string | null, title: string | null, text: string) => {
+      let resolvedHref = href
+      if (resolvedHref && !resolvedHref.startsWith('http') && !resolvedHref.startsWith('/')) {
+        resolvedHref = baseUrl + resolvedHref
       }
-      return originalImageRenderer(href, title, text)
+      return originalImageRenderer(resolvedHref || '', title || '', text)
     }
     
     marked.setOptions({ renderer })
