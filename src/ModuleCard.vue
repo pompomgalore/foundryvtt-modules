@@ -28,19 +28,8 @@ onMounted(async () => {
   try {
     const baseUrl = `/foundryvtt-modules/modules/${props.moduleId}/`
     
-    // Try to load preview.webp first, fallback to preview.png
-    const previewFormats = ['preview.webp', 'preview.png']
-    for (const format of previewFormats) {
-      try {
-        const response = await fetch(`${baseUrl}media/${format}`, { method: 'HEAD' })
-        if (response.ok) {
-          previewImage.value = `${baseUrl}media/${format}`
-          break
-        }
-      } catch (error) {
-        console.debug(`Preview format ${format} not found for ${props.moduleId}`)
-      }
-    }
+    // Set preview image
+    previewImage.value = `${baseUrl}media/preview.png`
     
     // Get module title from README
     const response = await fetch(`${baseUrl}README.md`)

@@ -11,8 +11,6 @@
       <div class="cta-footer">
         <a 
           href="https://www.patreon.com/c/PomPomGalli" 
-          target="_blank" 
-          rel="noopener noreferrer"
           class="cta-button"
         >
           Get early access on Patreon
