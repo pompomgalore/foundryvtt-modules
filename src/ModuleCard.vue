@@ -1,43 +1,57 @@
 <template>
-  <div class="module-card">
+  <router-link :to="`/module/${moduleId}`" class="module-card">
     <div v-if="loading" class="loading">Loading...</div>
-    <div v-else class="module-content" v-html="htmlContent"></div>
-  </div>
+    <div v-else class="card-content">
+      <img 
+        v-if="previewImage" 
+        :src="previewImage" 
+        :alt="`${moduleTitle} preview`"
+        class="preview-image"
+      />
+      <h2 class="module-title">{{ moduleTitle }}</h2>
+    </div>
+  </router-link>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { marked } from 'marked'
 
 const props = defineProps<{
   moduleId: string
 }>()
 
-const htmlContent = ref('')
+const moduleTitle = ref('')
+const previewImage = ref('')
 const loading = ref(true)
 
 onMounted(async () => {
   try {
     const baseUrl = `/foundryvtt-modules/modules/${props.moduleId}/`
-
+    
+    // Try to load preview.webp first, fallback to preview.png
+    const previewFormats = ['preview.webp', 'preview.png']
+    for (const format of previewFormats) {
+      try {
+        const response = await fetch(`${baseUrl}media/${format}`, { method: 'HEAD' })
+        if (response.ok) {
+          previewImage.value = `${baseUrl}media/${format}`
+          break
+        }
+      } catch {
+        // Continue to next format
+      }
+    }
+    
+    // Get module title from README
     const response = await fetch(`${baseUrl}README.md`)
     const markdown = await response.text()
     
-    const renderer = new marked.Renderer()
-    const originalImageRenderer = renderer.image.bind(renderer)
-    
-    renderer.image = (href, title, text) => {
-      if (href && !href.startsWith('http') && !href.startsWith('/')) {
-        href = baseUrl + href
-      }
-      return originalImageRenderer(href, title, text)
-    }
-    
-    marked.setOptions({ renderer })
-    htmlContent.value = marked.parse(markdown) as string
+    // Extract first heading as title
+    const titleMatch = markdown.match(/^#\s+(.+)$/m)
+    moduleTitle.value = titleMatch ? titleMatch[1] : props.moduleId
   } catch (error) {
-    console.error(`Error loading README for ${props.moduleId}:`, error)
-    htmlContent.value = `<p>Error loading module information</p>`
+    console.error(`Error loading module info for ${props.moduleId}:`, error)
+    moduleTitle.value = props.moduleId
   } finally {
     loading.value = false
   }
