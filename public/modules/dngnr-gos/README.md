@@ -1,10 +1,10 @@
 # Ghosts of Saltmarsh NPCs
 
-![Foundry VTT module banner](./banner.webp)
+![Foundry VTT module banner](./media/banner.webp)
 
 This module brings all the characters from the Ghosts of Saltmarsh adventure to life in Foundry VTT! It includes a compendium of NPC actors summarized and illustrated with a fun cartoon style token, ready to add personality to your storytelling scenes and combat encounters.
 
-![Foundry VTT module screenshot](./screenshot.png)
+![Foundry VTT module screenshot](./media/screenshot.png)
 
 ## Content & Compatibility
 
