@@ -20,8 +20,8 @@
   --spacing-xl: 3rem;
   
   /* Typography */
-  --font-display: 'Cinzel', 'Georgia', serif;
-  --font-body: 'Lora', 'Georgia', serif;
+  --font-display: 'Merriweather Sans', sans-serif;
+  --font-body: "Merriweather", serif;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 2rem;
@@ -69,7 +69,7 @@ h1 {
   line-height: 1.2;
   margin-bottom: var(--spacing-lg);
   text-align: center;
-  color: var(--color-burgundy);
+  color: var(--color-ink-faded);
   text-shadow: 2px 2px 4px var(--color-shadow);
   letter-spacing: 0.05em;
 }
@@ -83,7 +83,7 @@ h1 {
 
 .module-card {
   background: var(--color-parchment);
-  border: 3px solid var(--color-leather);
+  border: 1px solid var(--color-leather);
   border-radius: var(--border-radius);
   overflow: hidden;
   text-decoration: none;
@@ -95,30 +95,30 @@ h1 {
 
 .module-card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 16px var(--color-shadow), 0 0 0 2px var(--color-gold);
+  box-shadow: 0 8px 16px var(--color-shadow);
   border-color: var(--color-gold-dark);
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
+  padding: var(--spacing-xs) var(--spacing-sm) 0;
 }
 
 .preview-image {
   width: 100%;
   height: auto;
   display: block;
-  border-bottom: 2px solid var(--color-leather-light);
 }
 
 .module-title {
-  padding: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm);
   margin: 0;
   font-family: var(--font-display);
   font-size: var(--font-size-lg);
   font-weight: 700;
   text-align: center;
-  color: var(--color-burgundy);
+  color: var(--color-ink-faded);
   letter-spacing: 0.03em;
 }
 
@@ -132,7 +132,7 @@ h1 {
 }
 
 .back-link a {
-  color: var(--color-burgundy);
+  color: var(--color-ink-faded);
   text-decoration: none;
   font-weight: 600;
   font-size: var(--font-size-base);
@@ -140,13 +140,13 @@ h1 {
 }
 
 .back-link a:hover {
-  color: var(--color-burgundy-light);
+  color: var(--color-ink-faded);
   text-decoration: underline;
 }
 
 .module-content {
   background: var(--color-parchment);
-  border: 3px solid var(--color-leather);
+  border: 1px solid var(--color-leather);
   border-radius: var(--border-radius);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
@@ -157,13 +157,12 @@ h1 {
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius);
-  border: 2px solid var(--color-leather-light);
 }
 
 .module-content h1,
 .module-content h2 {
   font-family: var(--font-display);
-  color: var(--color-burgundy);
+  color: var(--color-ink-faded);
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-xs);
   letter-spacing: 0.03em;
@@ -172,7 +171,8 @@ h1 {
 .module-content h1 {
   font-size: var(--font-size-xl);
   border-bottom: 2px solid var(--color-gold);
-  padding-bottom: var(--spacing-xs);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
 }
 
 .module-content h2 {
@@ -205,7 +205,7 @@ h1 {
   background: linear-gradient(to bottom, var(--color-gold) 0%, var(--color-gold-dark) 100%);
   color: var(--color-ink);
   padding: var(--spacing-sm) var(--spacing-lg);
-  border: 3px solid var(--color-leather);
+  border: 1px solid var(--color-leather);
   border-radius: var(--border-radius);
   text-decoration: none;
   font-family: var(--font-display);
@@ -219,7 +219,6 @@ h1 {
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px var(--color-shadow), 0 0 0 2px var(--color-burgundy);
 }
 
 .loading {
