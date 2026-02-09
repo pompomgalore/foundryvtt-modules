@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Single Page Application (SPA) redirect for GitHub Pages
+      // This script stores the current URL path and redirects to the base index.html
+      // The router will then handle the path navigation
+      (function() {
+        var basePath = '/foundryvtt-modules';
+        var path = window.location.pathname.replace(basePath, '');
+        var query = window.location.search;
+        var hash = window.location.hash;
+        
+        // Store the path in sessionStorage for the index page to use
+        sessionStorage.setItem('redirect', path + query + hash);
+        
+        // Redirect to the base URL
+        window.location.replace(basePath + '/');
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
