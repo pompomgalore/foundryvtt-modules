@@ -17,7 +17,10 @@
         var redirect = sessionStorage.getItem('redirect');
         if (redirect) {
           sessionStorage.removeItem('redirect');
-          history.replaceState(null, '', redirect);
+          // Validate that the redirect path is safe (starts with /)
+          if (redirect.charAt(0) === '/') {
+            history.replaceState(null, '', redirect);
+          }
         }
       })();
     </script>

@@ -7,7 +7,8 @@
       // This script stores the current URL path and redirects to the base index.html
       // The router will then handle the path navigation
       (function() {
-        var path = window.location.pathname.replace(/\/foundryvtt-modules/, '');
+        var basePath = '/foundryvtt-modules';
+        var path = window.location.pathname.replace(basePath, '');
         var query = window.location.search;
         var hash = window.location.hash;
         
@@ -15,7 +16,7 @@
         sessionStorage.setItem('redirect', path + query + hash);
         
         // Redirect to the base URL
-        window.location.replace('/foundryvtt-modules/');
+        window.location.replace(basePath + '/');
       })();
     </script>
   </head>
