@@ -2,7 +2,7 @@
   "id": "dngnr-gos",
   "title": "Ghosts of Saltmarsh NPCs",
   "description": "Ghosts of Saltmarsh NPCs compendium for D&D fifth edition on Foundry VTT.",
-  "version": "1.0.10",
+  "version": "1.1.10",
   "library": "false",
   "authors": [
     {
@@ -29,9 +29,9 @@
     "minimum": "13",
     "verified": "13"
   },
-  "esmodules": ["esmodule.js"],
+  "esmodules": ["dngnr-gos.js"],
   "url": "https://pompomgalore.github.io/foundryvtt-modules",
   "manifest": "https://pompomgalore.github.io/foundryvtt-modules/releases/d19cbfc91fef671527577529c194716f/module.json",
-  "download": "https://pompomgalore.github.io/foundryvtt-modules/releases/d19cbfc91fef671527577529c194716f/1.0.10.zip",
+  "download": "https://pompomgalore.github.io/foundryvtt-modules/releases/d19cbfc91fef671527577529c194716f/1.1.10.zip",
   "readme": "https://pompomgalore.github.io/foundryvtt-modules/modules/dngnr-gos/README.md"
 }
