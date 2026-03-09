@@ -1,0 +1,37 @@
+{
+  "id": "dngnr-dosi",
+  "title": "Dragons of Stormwreck Isle NPCs",
+  "description": "Dragons of Stormwreck Isle NPCs compendium for D&D fifth edition on Foundry VTT.",
+  "version": "1.2.3",
+  "library": "false",
+  "authors": [
+    {
+      "name": "tnnbdr",
+      "url": "https://www.patreon.com/c/PomPomGalli"
+    }
+  ],
+  "media": [
+    {
+      "type": "icon",
+      "url": "https://avatars.githubusercontent.com/u/164841766?s=400&u=8bbdfb54c58fabe22a6a0181e07daf2f7d623d1d&v=4"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://foundryvtt.com/packages/dnd5e"
+      }
+    ]
+  },
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": ["dngnr-dosi.js"],
+  "url": "https://pompomgalore.github.io/foundryvtt-modules",
+  "manifest": "https://pompomgalore.github.io/foundryvtt-modules/releases/cc4e239f462307d788ba0eaf5f5330d5/module.json",
+  "download": "https://pompomgalore.github.io/foundryvtt-modules/releases/cc4e239f462307d788ba0eaf5f5330d5/1.2.3.zip",
+  "readme": "https://pompomgalore.github.io/foundryvtt-modules/modules/dngnr-dosi/README.md"
+}
