@@ -1,0 +1,37 @@
+{
+  "id": "dngnr-wa",
+  "title": "Frozen Sick NPCs",
+  "description": "Frozen Sick NPCs compendium for D&D fifth edition on Foundry VTT.",
+  "version": "1.2.4",
+  "library": "false",
+  "authors": [
+    {
+      "name": "tnnbdr",
+      "url": "https://www.patreon.com/c/PomPomGalli"
+    }
+  ],
+  "media": [
+    {
+      "type": "icon",
+      "url": "https://avatars.githubusercontent.com/u/164841766?s=400&u=8bbdfb54c58fabe22a6a0181e07daf2f7d623d1d&v=4"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://foundryvtt.com/packages/dnd5e"
+      }
+    ]
+  },
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": ["dngnr-wa.js"],
+  "url": "https://pompomgalore.github.io/foundryvtt-modules",
+  "manifest": "https://pompomgalore.github.io/foundryvtt-modules/releases/056335b2e63c2f48544bde8fd34c6c3e/module.json",
+  "download": "https://pompomgalore.github.io/foundryvtt-modules/releases/056335b2e63c2f48544bde8fd34c6c3e/1.2.4.zip",
+  "readme": "https://pompomgalore.github.io/foundryvtt-modules/modules/dngnr-wa/README.md"
+}
